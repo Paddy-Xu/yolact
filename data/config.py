@@ -173,7 +173,20 @@ pascal_sbd_dataset = dataset_base.copy({
 })
 
 
+my_custom_dataset = dataset_base.copy({
+    'name': 'My Dataset',
 
+    'train_images': '/content/drive/My Drive/pic/',
+    'train_info':   '/content/drive/My Drive/test_coco.json',
+
+    'valid_images': '/content/drive/My Drive/val_potato/val_img/',
+    'valid_info':   '/content/drive/My Drive/val_potato.json',
+
+    'has_gt': True,
+    'class_names': ('potato'),
+    #'label_map': { 1:  1 }
+
+})
 
 
 # ----------------------- TRANSFORMS ----------------------- #
@@ -766,6 +779,17 @@ yolact_resnet50_pascal_config = yolact_resnet50_config.copy({
         'use_square_anchors': False,
     })
 })
+
+yolact_resnet50_cig_butts_config = yolact_resnet50_config.copy({
+    'name': 'yolact_plus_resnet50_cig_butts',
+    # Dataset stuff
+    'dataset': my_custom_dataset,
+    'num_classes': len(my_custom_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 512,
+})
+
 
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
 
