@@ -176,15 +176,15 @@ pascal_sbd_dataset = dataset_base.copy({
 my_custom_dataset = dataset_base.copy({
     'name': 'My Dataset',
 
-    'train_images': '/content/drive/My Drive/pic/',
-    'train_info':   '/content/drive/My Drive/test_coco.json',
+    'train_images': '/content/yolact/pic/',
+    'train_info':   '/content/yolact/test_coco.json',
 
-    'valid_images': '/content/drive/My Drive/val_potato/val_img/',
-    'valid_info':   '/content/drive/My Drive/val_potato.json',
+    'valid_images': '/content/yolact/val_potato/val_img/',
+    'valid_info':   '/content/yolact/val_potato.json',
 
     'has_gt': True,
     'class_names': ('potato'),
-    #'label_map': { 1:  1 }
+    'label_map': { 1:  1 }
 
 })
 
